@@ -1,0 +1,44 @@
+plain-coff-kafka:
+ type: kafka
+ brokers: "kafka.mdx:9092"
+ topic: topic-perftool-kafka
+plain-coff-mosquitto:
+ type: mqtt
+ brokers: "mqtt.mdx:1883"
+ topic: topic-perftool-mqtt
+plain-con-kafka:
+ type: kafka
+ brokers: "kafka.mdx:9092"
+ topic: topic-perftool-kafka
+ data_compression: true
+plain-con-mosquitto:
+ type: mqtt
+ brokers: "mqtt.mdx:1883"
+ topic: topic-perftool-mqtt
+ data_compression: true
+aes-coff-kafka:
+ type: kafka
+ brokers: "kafka.mdx:9092"
+ topic: topic-perftool-kafka
+ crypto:
+  algorithm: AES
+aes-coff-mosquitto:
+ type: mqtt
+ brokers: "mqtt.mdx:1883"
+ topic: topic-perftool-mqtt
+ crypto:
+  algorithm: AES
+aes-con-kafka:
+ type: kafka
+ brokers: "kafka.mdx:9092"
+ topic: topic-perftool-kafka
+ data_compression: true
+ crypto:
+  algorithm: AES
+aes-con-mosquitto:
+ type: mqtt
+ brokers: "mqtt.mdx:1883"
+ topic: topic-perftool-mqtt
+ data_compression: true
+ crypto:
+  algorithm: AES
