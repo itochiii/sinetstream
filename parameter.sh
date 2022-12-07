@@ -12,6 +12,11 @@ SIZE=(1 10 100)
 ORDER=(1st 2nd)
 BROKER=(kafka mosquitto)
 
+if [ ! -d {result/} ]; then
+    mkdir result/
+fi
+
+
 for i in ${ENC[@]}
 do
   for j in ${COMP[@]}
