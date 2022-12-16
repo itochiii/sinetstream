@@ -9,13 +9,13 @@ ORDER=(1st 2nd)
 BROKER=(kafka mosquitto)
 
 
-rm result/*.tsv
+# rm result/*.tsv
 
 # if [ ! -d {result/} ]; then
 #     mkdir result/
 # fi
-if [ ! -d {result_5GSA/} ]; then
-    mkdir result_5GSA/
+if [ ! -d {result_LTE/} ]; then
+    mkdir result_LTE/
 fi
 
 for l in ${ORDER[@]}
@@ -29,7 +29,7 @@ do
         for m in ${BROKER[@]}
         do
          echo $i-$j-$k-$l-$m
-        ./build/distributions/perftool-1.7.2/bin/perftool -c 10 -n 100 -p $k -s $i-$j-$m -f tsv > result_5GSA/$i-$j-$k-$l-$m.tsv 
+        ./build/distributions/perftool-1.7.2/bin/perftool -c 10 -n 100 -p $k -s $i-$j-$m -f tsv > result_LTE/$i-$j-$k-$l-$m.tsv 
         done
       done
     done
