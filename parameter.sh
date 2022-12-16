@@ -23,7 +23,7 @@ do
       do
         for m in ${BROKER[@]}
         do
-         echo $i-$j-$l-$l-$m
+         echo $i-$j-$k-$l-$m
         ./build/distributions/perftool-1.7.2/bin/perftool -c 10 -n 100 -p $k -s $i-$j-$m -f tsv > result/$i-$j-$k-$l-$m.tsv 
         done
       done
