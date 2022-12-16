@@ -1,14 +1,10 @@
 #!/bin/bash
 
-# 集計ファイルを作る？
-# num_samples=30でいいのか？
-# 2セットは2回回せばいいのか？
-# 出力ファイルは分けるべき？
-# メッセージサイズ=payload-size？
+# 圧縮やめる
 
 ENC=(plain aes) # 符号化(plain=無、aes=有)
-COMP=(coff con) # 圧縮(coff=無、con=有)
-SIZE=(1 10 100)
+COMP=(coff) # 圧縮(coff=無、con=有)
+SIZE=(1024 10240 102400)  # 単位byte
 ORDER=(1st 2nd)
 BROKER=(kafka mosquitto)
 
@@ -27,8 +23,8 @@ do
       do
         for m in ${BROKER[@]}
         do
-        ./build/distributions/perftool-1.7.2/bin/perftool -n 30 -p $k -s $i-$j-$m -f tsv > result/$i-$j-$k-$l-$m.tsv 
-        #  echo $i-$j-$m
+         echo $i-$j-$l-$l-$m
+        ./build/distributions/perftool-1.7.2/bin/perftool -c 10 -n 100 -p $k -s $i-$j-$m -f tsv > result/$i-$j-$k-$l-$m.tsv 
         done
       done
     done
