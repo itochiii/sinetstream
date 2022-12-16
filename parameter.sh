@@ -27,7 +27,7 @@ do
       do
         for m in ${BROKER[@]}
         do
-        ./build/distributions/perftool-1.7.2/bin/perftool -s $i-$j-$m -f tsv > result/$i-$j-$k-$l-$m.tsv -n 30 -p $k
+        ./build/distributions/perftool-1.7.2/bin/perftool -n 30 -p $k -s $i-$j-$m -f tsv > result/$i-$j-$k-$l-$m.tsv 
         #  echo $i-$j-$m
         done
       done
