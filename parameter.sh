@@ -8,18 +8,20 @@ SIZE=(1024 10240 102400)  # 単位byte
 ORDER=(1st 2nd)
 BROKER=(kafka mosquitto)
 
+
+rm result/*.tsv
+
 if [ ! -d {result/} ]; then
     mkdir result/
 fi
 
-
-for i in ${ENC[@]}
+for l in ${ORDER[@]}
 do
-  for j in ${COMP[@]}
+  for i in ${ENC[@]}
   do
-    for k in ${SIZE[@]}
+    for j in ${COMP[@]}
     do
-      for l in ${ORDER[@]}
+      for k in ${SIZE[@]}
       do
         for m in ${BROKER[@]}
         do
